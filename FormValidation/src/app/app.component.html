@@ -1,0 +1,31 @@
+<form #userForm="ngForm" style="text-align: center;" >
+    <h1 style="background-color: gold;">Tamplate forms in angular for ragistaion </h1>
+    <div style="padding-top: 10px; margin-top: 20px;">
+     <label for="name">Name</label>
+     <input type="text" [(ngModel)]="user.name" name="name" required/>
+    </div><br>
+    <div>
+     <label for="lastName">Last Name</label>
+     <input type="tssext" [(ngModel)]="user.lastName" name="lastName" required/>
+    </div><br>
+    <div>
+    
+    <label for="emailAddress">Email</label>
+     <input type="email" [(ngModel)]="user.emailAddress" name="emailAddress" required/>
+    </div><br>
+    <button type="button" (click)="submit()">Submit</button>
+    
+   </form><br><br>
+   <div style="text-align: right;top:100px ;">
+   <h3>Form state</h3>
+   <p>Valid: {{userForm.valid}}</p>
+   <p>Pristine:  {{userForm.pristine}}</p>
+   <p>Touched:  {{userForm.touched}}</p>
+   <p>Submitted: {{userForm.submitted}}</p>
+   </div>
+   <div style="text-align: left;color: brown;">
+   <p *ngIf="user.name"> Name: {{ user.name }} </p>
+   <p *ngIf="user.lastName"> Last Name: {{ user.lastName }} </p>
+   <p *ngIf="user.emailAddress"> Email: {{ user.emailAddress }} </p>
+   </div>
+    
